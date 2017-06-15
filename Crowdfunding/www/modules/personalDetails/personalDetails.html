@@ -1,0 +1,156 @@
+<!--<ion-header-bar class="bar bar-header assertive-bg bar-stable">
+  <ion-title>个人信息</ion-title>
+</ion-header-bar>
+<ion-view>
+  <ion-content class="padding">
+    <ion-list>
+      <ion-item class="item-avatar">
+        <img src="assets/img/mike.png">
+        <h2 ng-bind="info.user_name"></h2>
+        <span>余额</span> <span ng-bind="info.money|currency:'¥ ':0"></span><span>元</span>
+        <button ng-click="modal.show()" class="badge button  button-positive">
+        充值
+        </button>
+      </ion-item>
+    </ion-list>
+    <div class="list list-inset">
+      <div class="item">
+        <span>Email:</span>
+        <span class="badge" ng-bind="info.email">
+        </span>
+      </div>
+      <div class="item">
+        <span>真实姓名:</span>
+        <span class="badge" ng-bind="info.identify_name">
+        </span>
+      </div>
+      <div class="item">
+        <span>性别:</span>
+        <span class="badge" ng-bind="sex[info.sex]">
+        </span>
+      </div>
+      <div class="item">
+        <span>身份证号:</span>
+        <span class="badge" ng-bind="info.identify_number">
+        </span>
+      </div>
+      <div class="item">
+        <span>手机号码:</span>
+        <span class="badge" ng-bind="info.mobile">
+        </span>
+      </div>
+      <div class="item">
+        <span>所在地区:</span>
+        <span class="badge" ng-bind="info.province">
+        </span>
+      </div>
+      <div class="item">
+        <span>所在城市:</span>
+        <span class="badge" ng-bind="info.city">
+        </span>
+      </div>
+      <div class="item">
+        <span>修改信息请前往PC端</span>
+      </div>
+    </div>
+    <button ng-click="cancel()" class="button button-block button-positive">
+ 退出登录
+</button>
+<script id="templates/modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar class="bar bar-header bar-positive">
+      <h1 class="title">—充值—</h1>
+      <button class="button button-clear button-primary" ng-click="modal.hide()">取消</button>
+    </ion-header-bar>
+    <ion-content class="padding">
+      <div class="list">
+        <label class="item item-input">
+              <span class="input-label">输入金额</span>
+              <input ng-model="add_money.null" oninput="if(value.length>10)value=value.slice(0,10)"  type="number" max="10">
+            </label>
+        <button class="button button-full button-positive" ng-click="Recharge()">确认充值</button>
+      </div>
+    </ion-content>
+  </ion-modal-view>
+</script>
+  </ion-content>
+</ion-view>-->
+
+
+<ion-header-bar class="bar bar-header assertive-bg bar-stable">
+  <ion-title>个人信息</ion-title>
+</ion-header-bar>
+<ion-view>
+  <ion-content class="padding">
+    <ion-list>
+      <ion-item class="item-avatar">
+        <img src="assets/img/mike.png">
+        <h2 ng-bind="info.user_name"></h2>
+        <span>余额</span> <span ng-bind="info.money|currency:'¥ ':0"></span><span>元</span>
+        <button ng-click="modal.show()" class="badge button  button-positive">
+        充值
+        </button>
+      </ion-item>
+    </ion-list>
+    <div class="list list-inset">
+      <div class="item">
+        <span>Email:</span>
+        <span class="badge" ng-bind="info.email">
+        </span>
+      </div>
+      <div class="item">
+        <span>真实姓名:</span>
+        <span class="badge" ng-bind="info.identify_name">
+        </span>
+      </div>
+      <div class="item">
+        <span>性别:</span>
+        <span class="badge" ng-bind="sex[info.sex]">
+        </span>
+      </div>
+      <div class="item">
+        <span>身份证号:</span>
+        <span class="badge" ng-bind="info.identify_number">
+        </span>
+      </div>
+      <div class="item">
+        <span>手机号码:</span>
+        <span class="badge" ng-bind="info.mobile">
+        </span>
+      </div>
+      <div class="item">
+        <span>所在地区:</span>
+        <span class="badge" ng-bind="info.province">
+        </span>
+      </div>
+      <div class="item">
+        <span>所在城市:</span>
+        <span class="badge" ng-bind="info.city">
+        </span>
+      </div>
+      <div class="item">
+        <span>修改信息请前往PC端</span>
+      </div>
+    </div>
+    <button ng-click="cancel()" class="button button-block button-positive">
+ 退出登录
+</button>
+    <script id="templates/modal.html" type="text/ng-template">
+      <ion-modal-view>
+        <ion-header-bar class="bar bar-header bar-positive">
+          <h1 class="title">—充值—</h1>
+          <button class="button button-clear button-primary" ng-click="modal.hide()">取消</button>
+        </ion-header-bar>
+        <ion-content class="padding">
+          <div class="list">
+            <label class="item item-input">
+              <span class="input-label">输入金额</span>
+              <input ng-model="add_money.money" oninput="if(value.length>10)value=value.slice(0,10)" type="number">
+            </label>
+            <button ng-disabled="add_money.money==undefined||add_money.money==''" class="button button-full button-positive" ng-click="Recharge()">确认充值</button>
+          </div>
+        </ion-content>
+      </ion-modal-view>
+    </script>
+  </ion-content>
+</ion-view>

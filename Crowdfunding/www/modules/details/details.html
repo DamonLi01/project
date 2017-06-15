@@ -1,0 +1,72 @@
+<ion-header-bar class="bar bar-header assertive-bg bar-stable">
+  <button ui-sref="tab.home" class="button button-icon icon ion-chevron-left"></button>
+  <ion-title>详情</ion-title>
+</ion-header-bar>
+<ion-view view-title="详情">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-avatar">
+        <img src="assets/img/noavatar_1.JPG" alt="" />
+
+        <p ng-bind="details.name"></p>
+
+        <p>发起人&nbsp;<span ng-bind="details.user_name"></span></p>
+      </ion-item>
+      <ion-item class="item-image padding">
+        <img height="296px" ng-src="{{details.image|imgUrl}}" alt="" />
+      </ion-item>
+      <ion-item class="item-icon">
+        <p ng-bind="row.name"></p>
+
+        <p>目标:<span ng-bind="details.limit_price|currency:'¥ ':0"></span></p>
+
+        <p class="row">
+          <span class="col-33">
+                    <i class="icon ion-android-person"></i>
+                    <span ng-bind="details.support_count"></span>
+          </span>
+          <span class="col-33">
+                    <i class="icon ion-social-yen"></i>
+                    <span ng-bind="details.support_amount|currency:'':0"></span>
+          </span>
+          <span class="col-33">
+                    达成率<span ng-bind="details.support_amount/details.limit_price|percentage:2"></span>
+          </span>
+        </p>
+      </ion-item>
+      <div ng-repeat="item in data">
+        <ion-item ng-click="mycheck($index)" class=" item-button-right">
+          <span ng-bind="item.b_price|currency:'¥ ':0"></span>
+          <button ng-click="sustain(item)" ng-disabled="details.end_time*1000<nTime" class="button button-positive">
+                    <i class="icon ion-android-checkmark-circle"></i>
+                </button>
+        </ion-item>
+        <ion-item ng-if="item.ischeck" class="item-body">
+          <span ng-bind="item.b_description"></span><br><br>
+          <b> 确认回报时间：回报发放成功后<span ng-bind="item.b_repaid_day"></span>天内 </b>
+        </ion-item>
+      </div>
+      <ion-item>项目详情</ion-item>
+
+      <div class="padding" ng-bind-html="((details.description=='')?details.description_2:details.description)|to_trusted"></div>
+
+    </ion-list>
+    <script id="details/modal.html" type="text/ng-template">
+      <ion-modal-view>
+        <ion-header-bar class="bar bar-header bar-positive">
+          <h1 class="title">确认框</h1>
+          <button class="button button-clear button-primary" ng-click="modal.hide()">取消</button>
+        </ion-header-bar>
+        <ion-content class="padding">
+          <div class="list">
+            <label class="item item-input">
+              <span class="input-label">地址</span>
+              <input ng-model="site" type="text" placeholder="请输入详细地址">
+            </label>
+            <button ng-disabled="site==undefind||site==''" class="button button-full button-positive" ng-click="verify()">确认付款</button>
+          </div>
+        </ion-content>
+      </ion-modal-view>
+    </script>
+  </ion-content>
+</ion-view>

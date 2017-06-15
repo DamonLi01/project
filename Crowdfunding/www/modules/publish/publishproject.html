@@ -1,0 +1,55 @@
+<ion-header-bar class="bar bar-header assertive-bg bar-stable">
+  <button ui-sref="tab.publish" class="button button-icon icon ion-chevron-left"></button>
+  <ion-title>发布项目</ion-title>
+</ion-header-bar>
+<ion-view>
+  <ion-content class="padding">
+    <ion-list>
+      <ion-item>
+        <p>项目信息</p>
+      </ion-item>
+      <label class="item item-input item-stacked-label">
+    <span class="input-label">项目标题</span>
+    <input type="text" ng-model="data.title_a" placeholder="名称不可超过30个字">
+  </label>
+      <label class="item item-input item-stacked-label">
+    <span class="input-label">筹资金额</span>
+    <input type="number" ng-model="data.fundraising" placeholder="不可少于50元">
+  </label>
+      <label class="item item-input item-stacked-label">
+    <span class="input-label">筹资天数</span>
+    <input type="number" ng-model="data.day" placeholder="10～90天">
+  </label>
+      <ion-item class="item-thumbnail-right">
+        <img ng-src="{{img|imgUrl}}">
+        <span class="input-label">项目图片</span>
+        <input id="inputfile" ng-model="image" onchange="angular.element(this).scope().upd()" type="file">
+      </ion-item>
+      <ion-item>
+        <p>回报设置</p>
+      </ion-item>
+      <label class="item item-input item-stacked-label">
+    <span class="input-label">支持类型</span>
+    <input type="text"  value="产品回报" ng-disabled="true">
+  </label>
+      <label class="item item-input item-stacked-label">
+    <span class="input-label">支持金额</span>
+    <input type="number"ng-model="data.Support_amount" placeholder="请输入支持金额">
+  </label>
+      <label class="item item-input item-stacked-label">
+    <span class="input-label">回报内容</span>
+    <textarea rows="3" ng-model="data.Return_content" style="resize:none"placeholder="请输入回报内容"></textarea>
+  </label>
+      <label class="item item-input item-stacked-label">
+    <span class="input-label">确认回报时间</span>
+    <input type="number" ng-model="data.Return_time"placeholder="请输入发放时间">
+  </label>
+    </ion-list>
+    <button ng-disabled="data.title_a==undefind||data.title_a==''||data.Return_time==undefind||data.Return_time==''
+                            ||data.Return_content==undefind||data.Return_content==''||data.Support_amount==undefind||data.Support_amount==''
+                            ||data.day==undefind||data.day=='' ||data.fundraising==undefind||data.fundraising==''||tupian == false
+                            " ng-click="publish()" class="button button-block button-positive">
+ 立即发布
+</button>
+  </ion-content>
+</ion-view>

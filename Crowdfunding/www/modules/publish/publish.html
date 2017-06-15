@@ -1,0 +1,28 @@
+<ion-header-bar class="bar bar-header assertive-bg bar-stable">
+  <!--<button class="button button-icon icon ion-navicon"></button>-->
+  <ion-title>发布</ion-title>
+</ion-header-bar>
+<ion-view>
+  <ion-content>
+    <ion-card>
+      <ion-item class="item-text-wrap">
+
+        <ion-item class="item-divider">
+          众筹商城
+        </ion-item><br>
+        <p>回报众筹：通过众筹商城发布筹款项目，筹资成功后，以约定的实物或虚拟作为奖励回报给支持者。（包括公益众筹</p>
+        <br>
+        <p>股权众筹：公司出让一定比例的股权，面向投资者募集资金，投资者通过出资入股公司，获得未来收益。</p>
+        <br>
+        <ion-list>
+          <ion-radio ng-model="choice" value="0">产品众筹</ion-radio>
+          <ion-radio ng-model="choice" value="1" ng-disabled="true">股权众筹(暂时停止发布)</ion-radio>
+          <ion-radio ng-model="choice" value="3">公益众筹</ion-radio>
+        </ion-list>
+        <button  ng-click="topublishproject(choice)" class="button button-block button-positive">
+          立即创建 
+        </button>
+      </ion-item>
+    </ion-card>
+  </ion-content>
+</ion-view>

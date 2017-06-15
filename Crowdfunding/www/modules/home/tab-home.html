@@ -1,0 +1,56 @@
+<ion-header-bar class="bar bar-header assertive-bg bar-stable">
+  <!--<button class="button button-icon icon ion-navicon"></button>-->
+  <ion-title>众筹商城</ion-title>
+</ion-header-bar>
+<ion-view>
+  <ion-content overflow-scroll="true">
+    <div class="position_in bar bar-dark">
+      <div class="button-bar">
+        <a ng-click="num(0)" class="button button-clear">产品众筹</a>
+        <a ng-click="num(1)" class="button button-clear">股权众筹</a>
+        <a ng-click="num(3)" class="button button-clear">公益众筹</a>
+      </div>
+    </div>
+    <div class="list">
+      <label class="item item-input item-select">
+                <div class="input-label">&nbsp;</div>
+                <select ng-change="change(x)" ng-model="x">
+                    <option value="">综合排序</option>
+                    <option value="-begin_time">最新上线</option>
+                    <option value="-support_amount">筹钱最多</option>
+                </select>
+            </label>
+      <a ng-repeat="row in productproject|orderBy:order" ng-click="toDetails(row.id)" class="item item-thumbnail-left">
+        <img ng-src="{{row.image|imgUrl}}">
+
+        <p ng-bind="row.name"></p>
+
+        <p class="row">
+          <span class="col-50">
+                       目标:<span ng-bind="row.limit_price|currency:'¥ ':0"></span>
+          </span>
+          <span class="col-50" ng-if="row.end_time*1000>nTime">
+                       剩余时间:<span ng-bind="row.end_time*1000-nTime|day"></span>天
+          </span>
+          <span class="col-50" ng-if="row.end_time*1000<nTime">
+                       结束时间:<span ng-bind="row.end_time*1000|date:'yyyy/MM/dd'"></span>
+          </span>
+        </p>
+
+        <p class="row">
+          <span class="col-33">
+                    <i class="icon ion-android-person"></i>
+                    <span ng-bind="row.support_count"></span>
+          </span>
+          <span class="col-33">
+                    <i class="icon ion-social-yen"></i>
+                    <span ng-bind="row.support_amount|currency:'':0"></span>
+          </span>
+          <span class="col-33">
+                    进度<span ng-bind="row.support_amount/row.limit_price|percentage:0"></span>
+          </span>
+        </p>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>
