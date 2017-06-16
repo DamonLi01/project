@@ -1,0 +1,131 @@
+<br>
+<div class="row table-bordered">
+    <div class="boder_bottom">
+        <div>
+            <label class="padding_left_20 margin_0 c_silver pull-left">所属行业:</label>
+            <ul class="ul_li_padding">
+                <li><a href="javascript:;">全部</a></li>
+                <li>
+                    <a href="javascript:;">机构投资人</a>
+                </li>
+                <li>
+                    <a href="javascript:;">投资人</a>
+                </li>
+                <li>
+                    <a href="javascript:;">普通用户</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div style="height: 45px;line-height: 45px">
+        <div>
+            <label class="padding_left_20 margin_0 c_silver pull-left">所属地区:</label>
+            <ul class="ul_li_padding">
+                <li><a href="javascript:;">全部</a></li>
+                <li ng-repeat="pro_P in angelInvestor |unique:'province'">
+                    <a ng-bind="pro_P.province" href="javascript:;"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-md-9">
+        <table width="100%" class="table-bordered">
+            <thead>
+            <tr>
+                <th>投资人</th>
+                <th>投资领域</th>
+                <th>参与项目</th>
+                <th>自荐项目</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <div class="display_ib">
+                        <img width="70px" height="70px" src="./assets/img/noavatar_1.jpg" alt="">
+                    </div>
+                    <div class="display_ib">
+                        <div>
+                            <span>damon</span><img src="" alt="V"><i>个人</i><a href="javascript:void (0);">私信</a>
+                        </div>
+                        <div>个人</div>
+                        <div>
+                            <span>广西</span><span>梧州</span><span>|</span><a href="javascript:void(0);">详细</a>
+                        </div>
+                    </div>
+
+                </td>
+                <td>
+                    暂无
+                </td>
+                <td>
+                    <div>发起:1个</div>
+                    <div>支持:0个</div>
+                </td>
+                <td>
+                    <a class="table-bordered" href="javascript:;">自荐我的项目</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-3">
+        <div class="table-bordered">
+            <h3>融资成功的项目</h3>
+            <div>
+                <img src="" alt="tupian">
+                <img src="" alt="tupian">
+            </div>
+        </div>
+        <br>
+        <div class="table-bordered">
+            <h3>星级投资人</h3>
+            <div>
+                <div class="display_ib">
+                    <img width="52px" height="52px" src="./assets/img/noavatar_1.jpg" alt="">
+                </div>
+                <div class="display_ib">
+                    <div>
+                        <span>damon</span><img src="" alt="V"><i>个人</i><a href="javascript:void (0);">私信</a>
+                    </div>
+                    <div>暂无</div>
+                    <div>
+                        <span>北京</span>
+                        <span>朝阳区</span>
+                        <a href="javascript:;">自荐项目</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="table-bordered">
+            <h3>最新投资人</h3>
+            <div>
+                <div class="display_ib">
+                    <img width="52px" height="52px" src="./assets/img/noavatar_1.jpg" alt="">
+                </div>
+                <div class="display_ib">
+                    <div>
+                        <span>damon</span><img src="" alt="V"><i>个人</i><a href="javascript:void (0);">私信</a>
+                    </div>
+                    <div>暂无     <a href="javascript:;">自荐项目</a></div>
+                </div>
+            </div>
+           <div>1</div>
+            <div>
+                <div class="display_ib">
+                    <img width="52px" height="52px" src="./assets/img/noavatar_1.jpg" alt="">
+                </div>
+                <div class="display_ib">
+                    <div>
+                        <span>damon</span><img src="" alt="V"><i>个人</i><a href="javascript:void (0);">私信</a>
+                    </div>
+                    <div>暂无     <a href="javascript:;">自荐项目</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

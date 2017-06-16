@@ -1,0 +1,20 @@
+
+var json = "callback=JSON_CALLBACK";
+var integralShopUrl = "http://localhost/zc/my_api/integralShop/integralShop.php?" + json;
+var integralClassUrl = "http://localhost/zc/my_api/integralShop/integralClass.php?" + json;
+var imageurl = "http://localhost/zc/my_api/";
+var home_recommendUrl = "http://localhost/zc/my_api/home/home_recommend.php?" + json;
+var home_specialUrl = "http://localhost/zc/my_api/home/home_special.php?" + json;
+var home_imageUrl = "http://localhost/zc/my_api/home/home_image.php?" + json;
+var home_publicBenefitUrl="http://localhost/zc/my_api/home/home_publicBenefit.php?"+json;
+var home_productUrl="http://localhost/zc/my_api/home/home_product.php?"+json;
+var productAdvUrl="http://localhost/zc/my_api/product/productAdv.php?"+json;
+var productClassUrl="http://localhost/zc/my_api/product/productClass.php?"+json;
+var productProvinceUrl="http://localhost/zc/my_api/product/productProvince.php?"+json;
+var productprojectUrl="http://localhost/zc/my_api/product/productproject.php?"+json;
+var publicBenefitporjectUrl="http://localhost/zc/my_api/publicBenefit/publicBenefit_project.php?"+json;
+var publicBenefit_industryUrl="http://localhost/zc/my_api/publicBenefit/publicBenefit_industry.php?"+json;
+var equityTransaction_industryUrl="http://localhost/zc/my_api/equityTransaction/equityTransaction_industry.php?"+json;
+var equityTransaction_projectUrl="http://localhost/zc/my_api/equityTransaction/equityTransaction_project.php?"+json;
+var angelInvestorUrl="http://localhost/zc/my_api/angelInvestor/angelInvestor.php?"+json;
+var moneyUrl="http://localhost/zc/my_api/login/money.php";

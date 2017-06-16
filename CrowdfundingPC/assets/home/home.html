@@ -1,0 +1,271 @@
+
+<div class="row display_none">
+    <div id="carousel-example-generic" class="carousel slide" data-interval="4000">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="slide_box carousel-inner" role="listbox">
+            <div class="item active">
+                <a href="#"> <img ng-src="{{home_image[0].image|imgUrl}}" alt="..."></a>
+
+            </div>
+            <div class="item">
+                <a href="#"> <img ng-src="{{home_image[1].image|imgUrl}}" alt="..."></a>
+
+            </div>
+            <div class="item">
+                <a href="#"> <img ng-src="{{home_image[2].image|imgUrl}}" alt="..."></a>
+
+            </div>
+
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+<div class="row table-bordered">
+    <div class="project_box ">
+        <div class="col-md-6 col-sm-12 display_none">
+            <div class="project_padding">
+                <b>专题项目</b>
+            </div>
+            <div id="myCarousel" class="carousel slide">
+                <div class="margin_auto carousel-inner">
+                    <div ng-click="toDetails(home_special[0].id)" class="cursor item active">
+                        <img class="margin_auto" ng-src="{{home_special[0].image|imgUrl}}" alt="First slide">
+                        <div class="details">
+                            <div>
+                                <span class="text-overflow" ng-bind="home_special[0].name"></span>
+                            </div>
+                            <div class="row text-center">
+                                <span class="col-xs-4 col-sm-4 col-md-4 display_ib">
+                                <p ng-bind="home_special[0].support_amount/home_special[0].limit_price|percentage:2"></p>
+                                <p>达成率</p>
+                            </span>
+                                <span class="col-xs-4 col-sm-4 col-md-4 display_ib">
+                                <p ng-bind="home_special[0].support_amount|currency:'¥ ':0"></p>
+                                <p>已筹金额</p>
+                            </span>
+                                <span class="col-xs-4 col-sm-4 col-md-4 display_ib">
+                                <p ng-bind="home_special[0].support_count"></p>
+                                <p>支持人数</p>
+                            </span>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-click="toDetails(home_special[0].id)" class="cursor item ">
+                        <img class="margin_auto" ng-src="{{home_special[1].image|imgUrl}}" alt="First slide">
+                        <div class="details">
+                            <div>
+                                <span class="text-overflow" ng-bind="home_special[1].name"></span>
+                            </div>
+                            <div class="row text-center">
+                                <span class="col-xs-4 col-sm-4 col-md-4 display_ib">
+                                <p ng-bind="home_special[1].support_amount/home_special[1].limit_price|percentage:2"></p>
+                                <p>达成率</p>
+                            </span>
+                                <span class="col-xs-4 col-sm-4 col-md-4 display_ib">
+                                <p ng-bind="home_special[1].support_amount|currency:'¥ ':0"></p>
+                                <p>已筹金额</p>
+                            </span>
+                                <span class="col-xs-4 col-sm-4 col-md-4 display_ib">
+                                <p ng-bind="home_special[1].support_count"></p>
+                                <p>支持人数</p>
+                            </span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="project_padding">
+                <b>推荐项目</b>
+            </div>
+            <div ng-click="toDetails(home_r.id)" ng-repeat="home_r in home_recommend |limitTo:4" class=" col-sm-6 col-md-6">
+                <div>
+                    <a class="cursor thumbnail">
+                        <img ng-src="{{home_r.image|imgUrl}}" alt="通用的占位符缩略图">
+                    </a>
+                </div>
+                <div class="details">
+                    <div>
+                        <span class="text-overflow" ng-bind="home_r.name"></span>
+                    </div>
+                    <div class="row text-center">
+                        <span class="col-xs-4 col-sm-4 col-md-4 display_ib">
+                                <p ng-bind="home_r.support_amount/home_r.limit_price|percentage:2"></p>
+                                <p>达成率</p>
+                            </span>
+                        <span class="col-xs-4 col-sm-4 col-md-4 display_ib">
+                                <p ng-bind="home_r.support_amount|currency:'¥ ':0"></p>
+                                <p>已筹金额</p>
+                            </span>
+                        <span class="col-xs-4 col-sm-4 col-md-4 display_ib">
+                                <p ng-bind="home_r.support_count"></p>
+                                <p>支持人数</p>
+                            </span>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<div class="row table-bordered">
+    <div class="position_r">
+        <span class="news"></span>
+        <span class="span_p">| 有你，有我，有梦想</span>
+
+        <div ui-sref="product" class="btn_p btn btn-default ">查看更多</div>
+    </div>
+    <div ng-click="toDetails(home_pro.id)" ng-repeat="home_pro in home_product|limitTo:4" class="cursor  col-sm-6 col-md-3">
+        <div class="thumbnail">
+            <img ng-src="{{home_pro.image|imgUrl}}" alt="">
+            <div class="caption">
+                <span class="text-overflow" ng-bind="home_pro.name"></span>
+                <div>
+                    <p>
+                        <span class=" ">目标: <span class="red" ng-bind="home_pro.limit_price|currency:'¥ ':0"></span></span>
+                        <span ng-if="home_pro.end_time*1000>nTime&&home_pro.support_amount<home_pro.limit_price" class="pull-right btn btn-xs btn-info">立即参与</span>
+                        <span ng-if="home_pro.end_time*1000<nTime&&home_pro.support_amount<home_pro.limit_price" class="pull-right btn btn-xs btn-default">筹资失败</span>
+                        <span ng-if="home_pro.support_amount>home_pro.limit_price" class="pull-right btn btn-xs btn-success">已成功</span>
+
+                    </p>
+
+                    <div class="myprogress progress">
+                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                            ng-style="{'width':home_pro.support_amount/home_pro.limit_price*100+'%'}">
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <span class="col-xs-4 col-sm-4 col-md-4 display_ib">
+                                <p ng-bind="home_pro.support_amount/home_pro.limit_price|percentage:2"></p>
+                                <p>达成率</p>
+                            </span>
+                        <span class="col-xs-4 col-sm-4 col-md-4 display_ib">
+                                <p ng-bind="home_pro.support_amount|currency:'¥ ':0"></p>
+                                <p>已筹金额</p>
+                            </span>
+                        <span class="col-xs-4 col-sm-4 col-md-4 display_ib">
+                                <p ng-if="(home_pro.end_time*1000-nTime)>0"><span
+                                        ng-bind="home_pro.end_time*1000-nTime|day"></span>天</p>
+                        <p ng-hide="home_pro.end_time*1000>nTime"><span ng-bind="home_pro.end_time*1000|date:'yyyy/MM/dd'"></span></p>
+                        <p ng-if="home_pro.end_time*1000>nTime">剩余时间</p>
+                        <p ng-hide="home_pro.end_time*1000>nTime">结束时间</p>
+                        </span>
+                    </div>
+                    <hr>
+                    <div>
+                        <span>支持:<span ng-bind="home_pro.support_count"></span></span>
+                        <span class="pull-right">关注:<span ng-bind="home_pro.focus_count"></span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="row table-bordered">
+    <div class="position_r">
+        <span class="news_b"></span>
+        <span class="span_p">| 有你，有我，有梦想</span>
+
+        <div ui-sref="publicBenefit" class="btn_p btn btn-default ">查看更多</div>
+    </div>
+    <div ng-click="toDetails(home_pub.id)" ng-repeat="home_pub in home_publicBenefit|limitTo:4" class="cursor  col-sm-6 col-md-3">
+        <div class="thumbnail">
+            <img ng-src="{{home_pub.image|imgUrl}}" alt="">
+
+            <div class="caption">
+                <span class="text-overflow" ng-bind="home_pub.name"></span>
+                <div>
+                    <p>
+                        <span>目标: <span class="red" ng-bind="home_pub.limit_price|currency:'¥ ':0"></span></span>
+                        <span ng-if="home_pub.end_time*1000>nTime&&home_pub.support_amount<home_pub.limit_price" class="pull-right btn btn-xs btn-info">立即参与</span>
+                        <span ng-if="home_pub.end_time*1000<nTime&&home_pub.support_amount<home_pub.limit_price" class="pull-right btn btn-xs btn-default">筹资失败</span>
+                        <span ng-if="home_pub.support_amount>home_pub.limit_price" class="pull-right btn btn-xs btn-success">已成功</span>
+                    </p>
+
+                    <div class="myprogress progress">
+                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                            ng-style="{'width':home_pub.support_amount/home_pub.limit_price*100+'%'}">
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <span class="col-xs-4 col-sm-4 col-md-4 display_ib">
+                                <p ng-bind="home_pub.support_amount/home_pub.limit_price|percentage:2"></p>
+                                <p>达成率</p>
+                            </span>
+                        <span class="col-xs-4 col-sm-4 col-md-4 display_ib">
+                                <p ng-bind="home_pub.support_amount|currency:'¥ ':0"></p>
+                                <p>已筹金额</p>
+                            </span>
+                        <span class="col-xs-4 col-sm-4 col-md-4 display_ib">
+                                <p ng-if="(home_pub.end_time*1000-nTime)>0"><span
+                                        ng-bind="home_pub.end_time*1000-nTime|day"></span>天</p>
+                        <p ng-hide="(home_pub.end_time*1000-nTime)>0"><span ng-bind="home_pub.end_time*1000|date:'yyyy/MM/dd'"></span></p>
+                        <p ng-if="(home_pub.end_time*1000-nTime)>0">剩余时间</p>
+                        <p ng-hide="(home_pub.end_time*1000-nTime)>0">结束时间</p>
+                        </span>
+                    </div>
+                    <hr>
+                    <div>
+                        <span>支持:<span ng-bind="home_pub.support_count"></span></span>
+                        <span class="pull-right">关注:<span ng-bind="home_pub.focus_count"></span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row table-bordered">
+    <div class="position_r">
+
+        <h3 class="dingwei"><b>他们都成功了</b></h3>
+
+    </div>
+    <div ng-click="toDetails(h_special.id)" ng-repeat="h_special in home_special |limitTo:4" class="cursor col-sm-6 col-md-3">
+        <div class="thumbnail">
+            <img ng-src="{{h_special.image|imgUrl}}" alt="通用的占位符缩略图">
+
+            <div class="caption">
+                <span class="text-overflow" ng-bind="h_special.name"></span>
+                <div>
+                    <span class="c_silver">共筹资
+                    <span class="red" ng-bind="h_special.limit_price|currency:'¥ ':0"></span>
+                    </span>
+                    <span class="pull-right c_silver">
+                      发起人
+                    <span class="black" ng-bind="h_special.user_name">
+                        </span>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<script>
+    $("#carousel-example-generic").carousel();
+    $("#myCarousel").carousel();
+</script>

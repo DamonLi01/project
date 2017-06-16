@@ -1,0 +1,65 @@
+<div class="navbar  navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header nav-title ">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">  
+            <span class="sr-only">Toggle navigation</span>  
+            <span class="icon-bar"></span>  
+            <span class="icon-bar"></span>  
+            <span class="icon-bar"></span>  
+          </button>
+            <a class="navbar-brand " href="#/index">众筹商城</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-right is-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="#/index">首页</a></li>
+                <li><a href="#/product">产品众筹</a></li>
+                <li><a href="#/publicBenefit">公益模块</a></li>
+                <li><a href="#/equityTransaction">股权交易</a></li>
+                <li><a href="#/PublishTheProject">发布项目</a></li>
+                <li ng-if="uname!=undefined">
+                    <a href="#/info"  ng-bind="uname"></a>
+                </li>
+                <li ng-if="uname!=undefined"><a ng-click="clear()" class="cursor">注销</a></li>
+                <li ng-if="uname==undefined"><a href="#/register"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
+                <li ng-if="uname==undefined"><a class="cursor" data-target="#myModal" data-toggle="modal"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content text-center">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
+                </button>
+                <h4 class="modal-title text-center" id="myModalLabel">
+                    登录
+                </h4>
+            </div>
+            <div class="modal-body">
+
+                <form class="form-horizontal">
+                    <div class="form-group text-left">
+                        <label for="inputEmail3" class="col-sm-2 control-label">账号</label>
+                        <div class="col-sm-10">
+                            <input type="text" ng-model="username" class="form-control " name="user" id="inputEmail3" required="required" placeholder="请输入账号">
+                        </div>
+                    </div>
+                    <div class="form-group text-left">
+                        <label for="input4" class="col-sm-2 control-label">密码</label>
+                        <div class="col-sm-10">
+                            <input type="password" ng-model="password" class="form-control" name="passwd" id="input4" required="required" placeholder="请输入登录密码">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button data-dismiss="{{miss}}" ng-click="submit()" type="submit" class="btn btn-info">登录
+                            </button> &nbsp; <a href="#/resetPasswords">忘记密码？</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <br/>
+        </div>
+    </div>
+</div>

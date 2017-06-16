@@ -1,0 +1,53 @@
+<br>
+<div class="row table-bordered">
+    <div class="boder_bottom">
+        <div>
+            <label class="padding_left_20 margin_0 c_silver pull-left">所属类别:</label>
+            <ul class="ul_li_padding">
+                <li><a href="javascript:;">不限</a></li>
+                <li ng-repeat="i_class in integralClass">
+                    <a ng-bind="i_class.name" href="javascript:;"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div style="height: 45px;line-height: 45px">
+        <div>
+            <div>
+                <label class="padding_left_20 margin_0 c_silver pull-left">积分范围:</label>
+                <ul class="ul_li_padding">
+                    <li><a href="javascript:;">不限</a></li>
+                    <li><a href="javascript:;">500积分以下</a></li>
+                    <li><a href="javascript:;">500-1000积分</a></li>
+                    <li><a href="javascript:;">1000-3000积分</a></li>
+                    <li><a href="javascript:;">3000-5000积分</a></li>
+                    <li><a href="javascript:;">5000积分以上</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="row ">
+    <div  class="table-bordered" style="height: 45px;line-height: 45px">
+        <ul class="ul_li_padding">
+            <li><a href="javascript:;">默认排序</a></li>
+            <li><a href="javascript:;">最新</a></li>
+            <li><a href="javascript:;">热门</a></li>
+            <li><a href="javascript:;">积分</a></li>
+        </ul>
+    </div>
+    <br>
+    <div ng-repeat="i_shop in integralShop" class="cursor col-xs-6 col-sm-4 col-md-3">
+        <div class="thumbnail">
+            <img ng-src="{{i_shop.img}}" alt="">
+            <div class="caption">
+                <h3 ng-bind="i_shop.name"></h3>
+                <span>所需积分：<span ng-bind="i_shop.score"></span>积分</span>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span>购买人数:<span ng-bind="i_shop.invented_number"></span>人</span>
+                &nbsp;
+                <div class="btn btn-block btn-info">查看详情</div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+<div class="row display_none">
+    <div class="product_adv" ng-bind-html="productAdv[0].code |to_trusted"></div>
+</div>
+<div class="row display_none">
+    <nav class="navbar navbar-default">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <!--<li><a ng-click="sort(0)" href="Javascript:;">融资金额 <i class="glyphicon {{icons[0]}}"></i></a></li>-->
+                <li><a ng-click="sort(1)" href="Javascript:;">关注数 <i class="glyphicon {{icons[1]}}"></i></a></li>
+                <li><a ng-click="sort(2)" href="Javascript:;">剩余时间 <i class="glyphicon {{icons[2]}}"></i></a></li>
+                <li><a ng-click="sort(3)" href="Javascript:;">完成比例 <i class="glyphicon {{icons[3]}}"></i></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+
+    </nav>
+</div>
+<div class="row">
+    <div ng-click="toDetails(prod_prov.id)" ng-repeat="prod_prov in productproject| orderBy: strSort" class="cursor col-sm-6 col-md-3">
+        <div class="thumbnail">
+            <img ng-src="{{prod_prov.image|imgUrl}}" alt="">
+            <div class="caption">
+                <span class="text-overflow" ng-bind="prod_prov.name"></span>
+                <div>
+                    <p>
+                        <span>目标: <span class="red" ng-bind="prod_prov.limit_price|currency:'¥ ':0"></span></span>
+                        <span ng-if="prod_prov.end_time*1000>nTime&&prod_prov.support_amount<prod_prov.limit_price" class="pull-right  btn btn-xs btn-info">立即参与</span>
+                        <span ng-if="prod_prov.end_time*1000<nTime&&prod_prov.support_amount<prod_prov.limit_price" class="pull-right btn btn-xs btn-default">筹资失败</span>
+                        <span ng-if="prod_prov.support_amount>prod_prov.limit_price" class="pull-right btn btn-xs btn-success">已成功</span>
+                    </p>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                            ng-style="{'width':prod_prov.support_amount/prod_prov.limit_price*100+'%'}">
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <span class="col-xs-4 col-sm-4 col-md-4 display_ib">
+                                <p ng-bind="prod_prov.support_amount/prod_prov.limit_price|percentage:2"></p>
+                                <p>达成率</p>
+                            </span>
+                        <span class="col-xs-4 col-sm-4 col-md-4 display_ib">
+                                <p ng-bind="prod_prov.support_amount|currency:'¥ ':0"></p>
+                                <p>已筹金额</p>
+                            </span>
+                        <span class="col-xs-4 col-sm-4 col-md-4 display_ib">
+                                <p ng-if="(prod_prov.end_time*1000-nTime)>0"><span
+                                        ng-bind="prod_prov.end_time*1000-nTime|day"></span>天</p>
+                        <p ng-hide="(prod_prov.end_time*1000-nTime)>0"><span ng-bind="prod_prov.end_time*1000|date:'yyyy/MM/dd'"></span></p>
+                        <p ng-if="(prod_prov.end_time*1000-nTime)>0">剩余时间</p>
+                        <p ng-hide="(prod_prov.end_time*1000-nTime)>0">结束时间</p>
+                        </span>
+                    </div>
+                    <hr>
+                    <div>
+                        <span>支持:<span ng-bind="prod_prov.support_count"></span></span>
+                        <span class="pull-right">关注:<span ng-bind="prod_prov.focus_count"></span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row display_none">
+    <div class="product_adv" ng-bind-html="productAdv[1].code |to_trusted"></div>
+</div>

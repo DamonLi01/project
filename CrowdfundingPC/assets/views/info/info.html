@@ -1,0 +1,131 @@
+<div class="row">
+    <div class="col-md-6">
+        <div>
+            <div class=" display_ib bg_Avatar">
+                <img width="100%" src="assets/img/noavatar_1.JPG" alt="">
+            </div>
+            <div style="position:absolute; top:5px;padding:0 10px" class="display_ib">
+                <h3 ng-bind="user_name"></h3>
+                <div><span ng-bind="province"></span> <span ng-bind="city"></span></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div style="width:100%; position:relative" class="pull-right table-bordered">
+            <div class="bg_vip display_ib">
+            </div>
+            <div class="display_ib">
+                <div class="display_ib">
+                    <span>余额(元)</span><br>
+
+                    <span class="red" ng-bind="money|currency:'¥ ':0"></span>
+                </div>
+            </div>
+            <div style="position:absolute;bottom:0;right:0;" data-target="#ReModal" data-toggle="modal" class=" btn btn-info">充值</div>
+        </div>
+    </div>
+</div>
+<div class="row table-bordered">
+    <div class="col-md-offset-2 col-md-7">
+        <br>
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">会员名称:</label>
+                <div class="col-sm-10">
+                    <input type="text" ng-readonly="true" ng-model="user_name" class=" input_width form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-2 control-label">EMAIL:</label>
+                <div class="col-sm-10">
+                    <input type="email" ng-readonly="readonly" ng-model="email" class=" input_width form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-2 control-label">真实姓名:</label>
+                <div class="col-sm-10">
+                    <input type="text" ng-readonly="readonly" ng-model="identify_name" class=" input_width form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-2 control-label">身份证号:</label>
+                <div class="col-sm-10">
+                    <input type="text" minlength="18" maxlength="18" ng-model="identify_number" ng-readonly="readonly" class=" input_width form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-2 control-label">手机号码:</label>
+                <div class="col-sm-10">
+                    <input type="text" minlength="11" maxlength="11" ng-model="mobile" ng-readonly="readonly" class=" input_width form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-2 control-label">性别:</label>
+                <div class="col-sm-10">
+                    <div class="radio display_ib">
+                        <label>
+                 <input type="radio" name="sex" ng-disabled="readonly"  ng-model="sex"   ng-checked="sex==1" value="1">男
+                </label>
+                    </div>
+                    <div class="radio display_ib">
+                        <label>
+                    <input type="radio" name="sex" ng-disabled="readonly"  ng-model="sex"  ng-checked="sex==0"  value="0">女 
+                </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-2 control-label">所在地区:</label>
+                <div class="col-sm-10">
+                    <input type="text" ng-readonly="readonly" ng-model="province" class=" input_width form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-2 control-label">所在城市:</label>
+                <div class="col-sm-10">
+                    <input type="text" ng-readonly="readonly" ng-model="city" class=" input_width form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-2 control-label"></label>
+                <div class="col-sm-10">
+                    <div ng-if="readonly" ng-click="alter()" class="btn btn-info">修改</div>
+                    <div ng-hide="readonly" ng-click="save()" class="btn btn-info">保存</div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<div class="modal fade" id="ReModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content text-center">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
+                </button>
+                <h4 class="modal-title text-center" id="myModalLabel">
+                    —— 充值 ——
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group text-left">
+                        <label for="inputEmail3" class="col-sm-2 control-label">金额</label>
+                        <div class="col-sm-10">
+                            <input type="number" ng-model="add_money" oninput="if(value.length>10)value=value.slice(0,10)" class="form-control " autocomplete="off"
+                                id="inputEmail3" placeholder="请输入金额">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div ng-click="Recharge()" class="btn btn-info">
+                    确认充值
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.modal-content -->
+</div>

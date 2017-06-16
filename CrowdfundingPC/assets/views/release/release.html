@@ -1,0 +1,110 @@
+<div class="row table-bordered">
+    <div class="col-md-8">
+        <div>
+            <div>
+                <form class="form-horizontal">
+                    <div>
+                        <span style="font-size: 24px; ">
+                        项目信息
+                            </span>
+                    </div>
+                    <div class="form-group">
+                        <label for="input2" class="col-sm-2 control-label">项目标题</label>
+                        <div class="col-sm-6">
+                            <input type="text" ng-model="title_a" class="form-control" id="input2" placeholder="名称不可超过30个字">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input3" class="col-sm-2 control-label">筹资金额
+                        </label>
+                        <div class="col-sm-6">
+                            <input type="number" ng-model="fundraising" class="form-control" id="input3" placeholder="不少于50元">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input4" class="col-sm-2 control-label">筹集天数
+                        </label>
+                        <div class="col-sm-6">
+                            <input type="number" ng-model="day" class="form-control" id="input4" placeholder="10～90天">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input6" class="col-sm-2 control-label">项目图片
+                        </label>
+                        <div class="col-sm-4">
+                            <input type="file"  ng-model="image" onchange="angular.element(this).scope().upd()"  id="inputfile" class="form-control">
+                        </div>
+                        <!--<div class="col-sm-2">
+                            <div  ng-click="upd()" class="form-control btn btn-info" >预览图片</div>
+                        </div>-->
+                    </div>
+                    <div>
+                        <span style="font-size: 24px; ">
+                            回报设置
+                       </span>
+                    </div>
+                    <div class="form-group">
+                        <label for="input7" class="col-sm-2 control-label">支持类型:
+                        </label>
+                        <div style="padding-top: 7px;" class="col-sm-6">
+                            <input type="radio" ng-model="typ" ng-checked="true">产品回报
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input8" class="col-sm-2 control-label">支持金额(¥):
+                        </label>
+                        <div class="col-sm-6">
+                            <input type="number" ng-model="Support_amount" class="form-control" id="input8" placeholder="请输入支持金额">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input9" class="col-sm-2 control-label">回报内容:
+                        </label>
+                        <div class="col-sm-6">
+                            <textarea rows="3" ng-model="Return_content" class="resize form-control" id="input9" placeholder="请输入回报内容"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input10" class="col-sm-4 control-label">确认回报时间:回报发放成功后(天)
+                        </label>
+                        <div class="col-sm-4">
+                            <input type="number" ng-model="Return_time" class="form-control" id="input10">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button ng-disabled="title_a==undefind||title_a==''||Return_time==undefind||Return_time==''
+                            ||Return_content==undefind||Return_content==''||Support_amount==undefind||Support_amount==''
+                            ||day==undefind||day=='' ||fundraising==undefind||fundraising==''||tupian == false
+                            " ng-click="publish()" class="btn btn-primary">发布项目</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div style="padding: 35px 35px ">
+            <div class="thumbnail">
+                <img ng-src="{{img|imgUrl}}">
+                <div class="caption">
+                    <span class="text-overflow" ng-bind="title_a"></span>
+                    <div>
+                        <span>目标:<span class="red" ng-bind="fundraising|currency:'¥ ':0"></span></span>
+                        <span class="pull-right"><span ng-bind="day"></span> 天</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="padding: 35px 35px ">
+            <div class="thumbnail">
+                <div class="caption">
+                    <p><b>支持 ¥<span ng-bind="Support_amount">0</span></b></p>
+                    <p ng-bind="Return_content"></p>
+                    <p>确认回报时间：回报发放成功后 <span ng-bind="Return_time">0</span>天内</p>
+                    <div class="btn btn-primary">支持</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
