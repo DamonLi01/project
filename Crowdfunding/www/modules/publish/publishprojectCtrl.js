@@ -19,7 +19,7 @@ define(["app", "services/chats", 'filters/myFilter'], function (app) {
     $scope.tupian = false;
     $scope.upd = function () {
       $http({
-        url: 'http://localhost/zc/release_img.php', ///上传文件接收服务
+        url: 'http://113.209.107.77/zc/release_img.php', ///上传文件接收服务
         method: 'POST',
         headers: {
           'Content-Type': undefined
@@ -45,7 +45,7 @@ define(["app", "services/chats", 'filters/myFilter'], function (app) {
         "&Return_content=" + $scope.data.Return_content + "&Support_amount=" + $scope.data.Support_amount +
         "&type=" + $scope.data.typ + "&day=" + $scope.data.day + "&fundraising=" + $scope.data.fundraising +
         "&title_a=" + $scope.data.title_a;
-      Url = "http://localhost/zc/my_api/release/publish.php";
+      Url = "http://113.209.107.77/zc/my_api/release/publish.php";
       $http({
         url: Url,
         method: "POST",

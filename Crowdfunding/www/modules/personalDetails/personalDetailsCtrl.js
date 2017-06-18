@@ -9,7 +9,7 @@
 //       $state.go('tab.account');
 //     }
 //     $scope.sex = ['女', '男'];
-//     Url = 'http://localhost/zc/my_api/info/info.php';
+//     Url = 'http://113.209.107.77/zc/my_api/info/info.php';
 //     params = "&id=" + sessionStorage.uid;
 //     $http({
 //       url: Url,
@@ -28,7 +28,7 @@
 //     }
 //     $scope.Recharge = function () {
 //       console.log($scope.add_money.money + sessionStorage.money * 1)
-//       Url = 'http://localhost/zc/my_api/info/Recharge.php';
+//       Url = 'http://113.209.107.77/zc/my_api/info/Recharge.php';
 //       params = "&id=" + sessionStorage.uid + "&money=" + ($scope.add_money.money * 1 + sessionStorage.money * 1);
 //       $http({
 //         url: Url,
@@ -96,7 +96,7 @@ define(["app", "urls", "filters/myFilter", "filters/percentage"], function (app)
       $state.go('tab.account');
     }
     $scope.sex = ['女', '男'];
-    Url = 'http://localhost/zc/my_api/info/info.php';
+    Url = 'http://113.209.107.77/zc/my_api/info/info.php';
     params = "&id=" + sessionStorage.uid;
     $http({
       url: Url,
@@ -115,7 +115,7 @@ define(["app", "urls", "filters/myFilter", "filters/percentage"], function (app)
     }
     $scope.Recharge = function () {
       console.log($scope.add_money.money)
-      Url = 'http://localhost/zc/my_api/info/Recharge.php';
+      Url = 'http://113.209.107.77/zc/my_api/info/Recharge.php';
       params = "&id=" + sessionStorage.uid + "&money=" + ($scope.add_money.money + sessionStorage.money * 1);
       $http({
         url: Url,

@@ -13,7 +13,7 @@ define(["app", "urls", "filters/myFilter", "filters/percentage", "ngCordova"], f
       console.log($scope.order);
     };
     $scope.num = function (x) {
-      homeUrl = 'http://localhost/zc/my_api/mobile/productproject.php';
+      homeUrl = 'http://113.209.107.77/zc/my_api/mobile/productproject.php';
       params = "&type=" + x;
       $http({
         url: homeUrl,

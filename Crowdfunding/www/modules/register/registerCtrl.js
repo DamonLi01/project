@@ -11,7 +11,7 @@ define(["app", "services/chats"], function (app) {
     $scope.submit = function () {
       params = "&user_name=" + $scope.reg.username + "&user_pwd=" + $scope.reg.password;
       console.log(params);
-      registerUrl = "http://localhost/zc/my_api/register/register.php";
+      registerUrl = "http://113.209.107.77/zc/my_api/register/register.php";
       $http({
         url: registerUrl,
         method: "POST",
