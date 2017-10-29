@@ -69,21 +69,66 @@
 <div class="row">
     <div class="table-bordered" style="height: 45px;line-height: 45px">
         <ul class="ul_li_padding">
-            <li><a href="javascript:;">项目主页</a></li>
-            <li><a href="javascript:;">动态 </a></li>
-            <li><a href="javascript:;">支持者 </a></li>
-            <li><a href="javascript:;">评论 </a></li>
+            <li ng-click="select($index)" ng-class="{actives: $index == selected}" ng-repeat="item in list"><a href="javascript:;" ng-bind="item"></a></li>
         </ul>
     </div>
 </div>
 <br>
 <div class="row table-bordered">
     <div style="margin: 0;padding: 0" class="table-bordered col-md-8">
-        <div style="border-bottom: 1px solid silver">
-            <span style="font-size: 24px; border-bottom: 2px solid blue" class=" display_ib ">项目介绍</span>
+        <div ng-class="{target:selected!=0}">
+            <div style="border-bottom: 1px solid silver">
+                <span style="font-size: 24px; border-bottom: 2px solid blue" class=" display_ib ">项目介绍</span>
+            </div>
+            <div class="padding_10" ng-bind-html="details.description|to_trusted"></div>
         </div>
-        <div class="padding_10" ng-bind-html="details.description|to_trusted"></div>
+        <div ng-class="{target:selected!=3}">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">评论墙</h3>
+                </div>
+                <div class="panel-body" style="background-color: floralwhite;">
+                    <div class="media" style="background-color: cornsilk; border: 1px solid #ddd;" ng-repeat="item in comment">
+                        <a class="media-left" href="javascript:;">
+                            <img class="media-object" width="49"height="49" src="assets/img/noavatar_1.JPG"
+                                 alt="">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading" >{{item.user_name}}<small style="padding: 0 50px;" ng-bind="item.CreateTime"></small></h4>
+                   <p ng-bind="item.Content"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="input-group">
+                <input type="text" class="form-control" ng-model="content" placeholder="请输入评论">
+                <span class="input-group-btn">
+                 <button class="btn btn-default" type="button" ng-click="save()">提交</button>
+                </span>
+            </div><!-- /input-group -->
+        </div>
+        <div  ng-class="{target:selected!=2}">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">支持榜</h3>
+                </div>
+                <div class="panel-body" style="background-color: floralwhite;">
+                    <div class="media" style="background-color: cornsilk; border: 1px solid #ddd;" ng-repeat="item in Supports" >
+                        <a class="media-left" href="javascript:;">
+                            <img class="media-object" width="49"height="49" src="assets/img/noavatar_1.JPG"
+                                 alt="">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading" >{{item.userName}} <small style="padding: 0 50px;" ng-bind="item.addtime"></small></h4>
+                            <p>支持总金额:  {{item.money|currency:'¥ '}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
+
     <div class="col-md-4">
         <div id="support" style="margin-bottom: 10px" class="padding_10 table-bordered">
             <div style="border-bottom: 1px solid silver">

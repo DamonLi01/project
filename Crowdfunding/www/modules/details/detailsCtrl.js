@@ -7,7 +7,7 @@ define(["app", "urls", "filters/myFilter", "filters/percentage", 'services/mySer
     $scope.nTime = Date.now();
     $scope.detailsId = $stateParams.detailsId;
     console.log($scope.detailsId);
-    detailsUrl = 'http://113.209.107.77/zc/my_api/details/details.php';
+    detailsUrl = 'http://damonli.duapp.com/zc/my_api/details/details.php';
     params = "&id=" + $scope.detailsId;
     $http({
       url: detailsUrl,
@@ -38,7 +38,7 @@ define(["app", "urls", "filters/myFilter", "filters/percentage", 'services/mySer
       $scope.verify = function () {
         console.log(data);
         if (sessionStorage.money * 1 > data.b_price * 1) {
-          Url = 'http://113.209.107.77/zc/my_api/details/support.php';
+          Url = 'http://damonli.duapp.com/zc/my_api/details/support.php';
           $http({
             url: Url,
             method: "POST",

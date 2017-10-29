@@ -1,10 +1,10 @@
-define(["app"], function (app) {
+define(["app", "urls"], function (app) {
     app.controller('registerCtrl', function ($scope, $http) {
         $scope.username = "";
         $scope.password = "";
         $scope.submit = function () {
                 params = "&user_name=" + $scope.username + "&user_pwd=" + $scope.password;
-                registerUrl = "http://localhost/zc/my_api/register/register.php";
+
                 $http({
                     url: registerUrl,
                     method: "POST",

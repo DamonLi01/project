@@ -10,4 +10,5 @@ define(["app"], function (app) {
             return string;
         };
     });
+
 });

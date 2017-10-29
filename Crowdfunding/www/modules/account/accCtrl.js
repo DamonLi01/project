@@ -10,7 +10,7 @@ define(["app", 'urls'], function (app) {
     }
     $scope.submit = function () {
       params = "&user_name=" + $scope.reg.username + "&user_pwd=" + $scope.reg.password;
-      registerUrl = "http://113.209.107.77/zc/my_api/login/login.php";
+      registerUrl = "http://damonli.duapp.com/zc/my_api/login/login.php";
       $http({
         url: registerUrl,
         method: "POST",

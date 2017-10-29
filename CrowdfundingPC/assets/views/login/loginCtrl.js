@@ -4,9 +4,9 @@ define(["app",'urls'], function (app) {
         $scope.password = "";
         $scope.submit = function () {
             params = "&user_name=" + $scope.username + "&user_pwd=" + $scope.password;
-            registerUrl = "http://localhost/zc/my_api/login/login.php";
+
             $http({
-                url: registerUrl,
+                url: loginUrl,
                 method: "POST",
                 headers: { //跨域请求头
                     'Content-Type': 'application/x-www-form-urlencoded'

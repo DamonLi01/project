@@ -15,6 +15,13 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label for="editor_id" class="col-sm-2 control-label">项目介绍:
+                        </label>
+                        <div class="col-sm-6">
+                            <textarea name="content"  id="editor_id"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label for="input3" class="col-sm-2 control-label">筹资金额
                         </label>
                         <div class="col-sm-6">
@@ -29,10 +36,10 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="input6" class="col-sm-2 control-label">项目图片
+                        <label for="inputfile" class="col-sm-2 control-label">项目图片
                         </label>
                         <div class="col-sm-4">
-                            <input type="file"  ng-model="image" onchange="angular.element(this).scope().upd()"  id="inputfile" class="form-control">
+                            <input type="file"  ng-model="image" onchange="angular.element(this).scope().upd()" accept="image/png,image/gif"  id="inputfile" class="form-control">
                         </div>
                         <!--<div class="col-sm-2">
                             <div  ng-click="upd()" class="form-control btn btn-info" >预览图片</div>
@@ -44,7 +51,7 @@
                        </span>
                     </div>
                     <div class="form-group">
-                        <label for="input7" class="col-sm-2 control-label">支持类型:
+                        <label  class="col-sm-2 control-label">支持类型:
                         </label>
                         <div style="padding-top: 7px;" class="col-sm-6">
                             <input type="radio" ng-model="typ" ng-checked="true">产品回报
@@ -108,3 +115,9 @@
         </div>
     </div>
 </div>
+<script>
+
+
+
+
+</script>

@@ -1,13 +1,14 @@
 <div class="navbar  navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header nav-title ">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">  
-            <span class="sr-only">Toggle navigation</span>  
-            <span class="icon-bar"></span>  
-            <span class="icon-bar"></span>  
-            <span class="icon-bar"></span>  
-          </button>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
             <a class="navbar-brand " href="#/index">众筹商城</a>
+            <a class="navbar-brand " style="font-size: 12px;" href="javascript:;">位置: {{areaname}}</a>
         </div>
         <div class="collapse navbar-collapse navbar-right is-collapse">
             <ul class="nav navbar-nav">
@@ -20,12 +21,16 @@
                     <a href="#/info" ng-bind="uname"></a>
                 </li>
                 <li ng-if="uname!=undefined"><a ng-click="clear()" class="cursor">注销</a></li>
-                <li ng-if="uname==undefined"><a href="#/register"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
-                <li ng-if="uname==undefined"><a class="cursor" data-target="#myModal" data-toggle="modal"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
+                <li ng-if="uname==undefined"><a href="#/register"><span class="glyphicon glyphicon-user"></span> 注册</a>
+                </li>
+                <li ng-if="uname==undefined"><a class="cursor" data-target="#myModal" data-toggle="modal"><span
+                        class="glyphicon glyphicon-log-in"></span> 登录</a></li>
             </ul>
         </div>
     </div>
 </div>
+<successtip ng-if="loginok" style="display: inline; position: fixed;left: calc(50% - 44px);z-index: 999999;">登录成功</successtip>
+<dangertip ng-if="loginerro" style="display: inline; position: fixed;left: calc(50% - 44px);z-index: 999999;">账号或密码错误</dangertip>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content text-center">
@@ -42,13 +47,15 @@
                     <div class="form-group text-left">
                         <label for="inputEmail3" class="col-sm-2 control-label">账号</label>
                         <div class="col-sm-10">
-                            <input type="text" ng-model="username" class="form-control " name="user" id="inputEmail3" required="required" placeholder="请输入账号">
+                            <input type="text" ng-model="username" class="form-control " name="user" id="inputEmail3"
+                                   required="required" placeholder="请输入账号">
                         </div>
                     </div>
                     <div class="form-group text-left">
                         <label for="input4" class="col-sm-2 control-label">密码</label>
                         <div class="col-sm-10">
-                            <input type="password" ng-model="password" class="form-control" name="passwd" id="input4" required="required" placeholder="请输入登录密码">
+                            <input type="password" ng-model="password" class="form-control" name="passwd" id="input4"
+                                   required="required" placeholder="请输入登录密码">
                         </div>
                     </div>
                     <div class="form-group">
@@ -63,3 +70,4 @@
         </div>
     </div>
 </div>
+

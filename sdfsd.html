@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<textarea id="editor_id" name="content" ></textarea>
+<script src="./kindeditor/kindeditor-all-min.js"></script>
+<script src="./kindeditor/lang/zh_CN.js"></script>
+
+<script>
+
+    KindEditor.options.filterMode = false;
+    KindEditor.ready(function (K) {
+    window.editor = K.create('#editor_id');
+
+    });
+</script>
+</body>
+</html>

@@ -1,7 +1,7 @@
-define(["app", "urls", "filters/percentage", "filters/myFilter", 'services/myServ'], function (app) {
-    app.controller('releaseCtrl', function ($rootScope, $scope, $http, $sce, $state, $stateParams, jsonToStr) {
+define(["app", "urls", "directives/myDirect","filters/percentage", "filters/myFilter", 'services/myServ'], function (app) {
+    app.controller('releaseCtrl', function ($rootScope, $scope, $http, $sce, $state, $stateParams) {
         $scope.releaseId = $stateParams.releaseId;
-        console.log($scope.releaseId)
+
         $scope.Return_time = '';
         $scope.Return_content = '';
         $scope.Support_amount = '';
@@ -11,9 +11,9 @@ define(["app", "urls", "filters/percentage", "filters/myFilter", 'services/mySer
         $scope.title_a = '';
         $scope.tupian = false;
         $scope.upd = function () {
-            console.log("Changed");
+
             $http({
-                url: 'http://localhost/zc/release_img.php', ///上传文件接收服务
+                url: 'http://localhost/damon/release_img.php', ///上传文件接收服务
                 method: 'POST',
                 headers: {
                     'Content-Type': undefined
@@ -40,9 +40,9 @@ define(["app", "urls", "filters/percentage", "filters/myFilter", 'services/mySer
                 "&Return_content=" + $scope.Return_content + "&Support_amount=" + $scope.Support_amount +
                 "&type=" + $scope.typ + "&day=" + $scope.day + "&fundraising=" + $scope.fundraising +
                 "&title_a=" + $scope.title_a;
-            Url = "http://localhost/zc/my_api/release/publish.php";
+
             $http({
-                url: Url,
+                url: imgUrl,
                 method: "POST",
                 headers: { //跨域请求头
                     'Content-Type': 'application/x-www-form-urlencoded'
@@ -56,5 +56,6 @@ define(["app", "urls", "filters/percentage", "filters/myFilter", 'services/mySer
                 }
             });
         };
+
     });
 });

@@ -1,4 +1,4 @@
-define(["app"], function (app) {
+define(["app", "urls"], function (app) {
     app.controller('infoCtrl', function ($scope, $http, $state) {
         if (sessionStorage.uid == undefined) {
             $state.go('home');
@@ -10,10 +10,10 @@ define(["app"], function (app) {
             $scope.readonly = false;
         }
         console.log($scope.uid);
-        Url = 'http://localhost/zc/my_api/info/info.php';
+
         params = "&id=" + $scope.uid;
         $http({
-            url: Url,
+            url: infoUrl,
             method: "POST",
             headers: { //跨域请求头
                 'Content-Type': 'application/x-www-form-urlencoded'
@@ -32,10 +32,10 @@ define(["app"], function (app) {
         });
 
         $scope.Recharge = function () {
-            Url = 'http://localhost/zc/my_api/info/Recharge.php';
+          
             params = "&id=" + $scope.uid + "&money=" + ($scope.add_money + sessionStorage.money * 1);
             $http({
-                url: Url,
+                url: chongzhiUrl,
                 method: "POST",
                 headers: { //跨域请求头
                     'Content-Type': 'application/x-www-form-urlencoded'
@@ -51,14 +51,14 @@ define(["app"], function (app) {
             });
         }
         $scope.save = function () {
-            Url = 'http://localhost/zc/my_api/info/alter.php';
+         
             params = "&city=" + $scope.city +
                 "&province=" + $scope.province + "&sex=" + $scope.sex +
                 "&mobile=" + $scope.mobile + "&identify_number=" + $scope.identify_number +
                 "&identify_name=" + $scope.identify_name + "&email=" + $scope.email +
                 "&user_name=" + $scope.user_name + "&id=" + $scope.uid;
             $http({
-                url: Url,
+                url: editInfoUrl,
                 method: "POST",
                 headers: { //跨域请求头
                     'Content-Type': 'application/x-www-form-urlencoded'

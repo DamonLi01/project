@@ -7,7 +7,12 @@ require.config({
         // angularAMD
         "angularAMD": "./libs/angularAMD",
         "ngload": "./libs/ngload",
-        'app': './app'
+        'app': './app',
+        // 'map':'http://api.map.baidu.com/api?v=2.0&ak=Rqpld4KoPGqEUePSO81UnkGbSADAMf3s',
+        // 'jquery':'./assets/libs/jquery.min',
+        // 'bootstrap':'./assets/libs/bootstrap.min',
+        // 'prefixfree':'./assets/libs/prefixfree.min',
+        // 'modernizr':'./assets/libs/modernizr'
     },
     shim: {
         // angular
@@ -17,7 +22,12 @@ require.config({
         "ui-router": ["angular"],
         //// angularAMD
         "angularAMD": ["angular"],
-        "ngload": ["angularAMD"]
+        "ngload": ["angularAMD"],
+        // "jquery":["angular"],
+        // "map":["angular"],
+        // "bootstrap":["jquery"],
+        // "prefixfree":["angular"],
+        // "modernizr":["angular"]
     },
-    deps: ['app'],
+    deps: ['app']
 });

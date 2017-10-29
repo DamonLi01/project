@@ -7,7 +7,7 @@ define(["app"], function (app) {
     app.filter('imgUrl', function () {
         return function (input) {
             if (input != undefined) {
-                return 'http://localhost/zc/' + input;
+                return 'http://damonli.duapp.com/zc/' + input;
             }
         }
     });
@@ -24,7 +24,7 @@ define(["app"], function (app) {
                 // }
                 // console.log(text);
                 const regex = /img(.*?)src=".\/public/g;
-                const subst = 'img width="100%" src="http://localhost/zc/public';
+                const subst = 'img width="100%" src="http://damonli.duapp.com/zc/public';
                 const result = text.replace(regex, subst);
                 return $sce.trustAsHtml(result);
             }

@@ -1,5 +1,6 @@
 define(["app", "urls", "filters/percentage", "filters/myFilter"], function (app) {
     app.controller('homeCtrl', function ($rootScope, $scope, $http, $state) {
+        
         $rootScope.title = '首页';
         $scope.reveal = false;
         $scope.nTime = Date.now();
